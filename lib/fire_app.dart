@@ -61,7 +61,9 @@ class _FireAppState extends State<FireApp> {
 
                       child: IconButton(
                         style: ButtonStyle(),
-                        onPressed: () {},
+                        onPressed: () {
+                          fireTV.arrowUp();
+                        },
                         icon: Icon(
                           Icons.keyboard_arrow_up_rounded,
                           color: Colors.white,
@@ -73,7 +75,9 @@ class _FireAppState extends State<FireApp> {
                       bottom: 0,
 
                       child: IconButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          fireTV.arrowDown();
+                        },
                         icon: Icon(
                           Icons.keyboard_arrow_down_rounded,
                           color: Colors.white,
@@ -85,7 +89,9 @@ class _FireAppState extends State<FireApp> {
                       left: 0,
 
                       child: IconButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          fireTV.arrowLeft();
+                        },
                         icon: Icon(
                           Icons.keyboard_arrow_left_rounded,
                           color: Colors.white,
@@ -97,7 +103,9 @@ class _FireAppState extends State<FireApp> {
                       right: 0,
 
                       child: IconButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          fireTV.arrowRight();
+                        },
                         icon: Icon(
                           Icons.keyboard_arrow_right_rounded,
                           color: Colors.white,
@@ -106,7 +114,9 @@ class _FireAppState extends State<FireApp> {
                       ),
                     ),
                     ElevatedButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        fireTV.selectButton();
+                      },
                       style: ElevatedButton.styleFrom(
                         shape: CircleBorder(),
                         padding: const EdgeInsets.all(24),
@@ -157,7 +167,9 @@ class _FireAppState extends State<FireApp> {
                           icon: Icon(color: Colors.white, Icons.add),
                         ),
                         IconButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            fireTV.volumeMute();
+                          },
                           icon: Icon(
                             color: Colors.white,
                             Icons.music_off_rounded,
@@ -179,7 +191,9 @@ class _FireAppState extends State<FireApp> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   InkWell(
-                    onTap: () {},
+                    onTap: () {
+                      fireTV.home();
+                    },
 
                     child: Container(
                       height: 60,
@@ -213,7 +227,9 @@ class _FireAppState extends State<FireApp> {
                   ),
                   SizedBox(width: 60),
                   InkWell(
-                    onTap: () {},
+                    onTap: () {
+                      fireTV.back();
+                    },
 
                     child: Container(
                       height: 60,
@@ -247,37 +263,20 @@ class _FireAppState extends State<FireApp> {
                   ),
                 ],
               ),
-              SizedBox(height: 15),
-              ElevatedButton(
-                onPressed: () {
-                  fireTV.playPause();
-                  print("Play/Pause pressed");
-                },
-                child: Text("Play/Pause"),
-              ),
-              SizedBox(height: 15),
-              ElevatedButton(
-                onPressed: () {
-                  fireTV.home();
-                  print("Home pressed");
-                },
-                child: Text("Home"),
-              ),
-              SizedBox(height: 15),
-              ElevatedButton(
-                onPressed: () {
-                  fireTV.back();
-                  print("Back pressed");
-                },
-                child: Text("Back"),
-              ),
-              ElevatedButton(
-                onPressed: () {
+              SizedBox(height: 20),
+              InkWell(
+                onTap: () {
                   fireTV.netFlix();
-                  print('Opened Netflix');
+                  print('Nav to Netflix');
                 },
-                child: Text('Opened Netflix'),
+                child: Container(
+                  width: 70,
+
+                  child: Image.asset(width: 40, 'assets/netflix.png'),
+                ),
               ),
+
+              SizedBox(height: 15),
             ],
           ),
         ),
